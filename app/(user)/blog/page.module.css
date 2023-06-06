@@ -1,0 +1,30 @@
+.blogContainer {
+  position: relative;
+  overflow-x: hidden;
+  cursor: pointer;
+}
+.blogDuration {
+  transition: all 0.3s linear;
+  color: #999;
+  display: flex;
+  align-items: center;
+  font-weight: 400;
+  position: absolute;
+  right: -25px;
+  bottom: 18px;
+}
+.arrow {
+  font-size: 18px;
+  font-weight: 500;
+}
+.blogContainer:hover .blogTitle {
+  color: #5f5f5f;
+  transition: all 0.1s linear;
+}
+.blogContainer:hover .blogDuration {
+  right: -4px;
+  transition: all 0.2s linear;
+}
+.blogContainer:hover .arrow {
+  display: inline-flex;
+}

@@ -6,9 +6,9 @@ export default function Home() {
     <section className="flex flex-col justify-between">
       <h1 className="font-bold text-3xl text-left ">Reshad Sadik</h1>
       <p className="my-5 max-w-[460px] text-neutral-800 dark:text-neutral-200">
-        Hey, I'm Lee. I'm a <b> Software Developer </b>
-        at SJ Innovation LLC. Where I'm working on MERN stack providing with
-        faster web service.
+        Hey, I'm Reshad. <b> Software Developer </b>
+        at SJ Innovation LLC. <br />
+        Open source contributor | Networking enthusiast | AWS
       </p>
       <div className="flex items-start md:items-center my-8 flex-col md:flex-row">
         <Image
@@ -45,10 +45,8 @@ export default function Home() {
         </div>
       </div>
       <p className="my-5 max-w-[600px] text-neutral-800 dark:text-neutral-200">
-        I'm a Next.js contributor and help lead our open-source communities. I'm
-        passionate about frontend development and have created courses on React,
-        Next.js, and web development. I'm an advisor and investor in early stage
-        startups.
+        I'm an full stack developer experienced on creating web apps using
+        React, Next.js, Nodejs.
       </p>
       <ul className="flex flex-col md:flex-row mt-8 space-x-0 md:space-x-4 space-y-2 md:space-y-0 font-sm text-neutral-500 dark:text-neutral-400">
         <li>
