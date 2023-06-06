@@ -1,7 +1,13 @@
 import Image from "next/image";
 import Link from "next/link";
+import { BsArrowUpRight } from "react-icons/bs";
+import { BsGithub } from "react-icons/bs";
+import { BiStats } from "react-icons/bi";
+import ResumeDownloadButton from "../components/ResumeDownloadButton";
+import getGithubService from "../components/getGithubService";
 
-export default function Home() {
+export default async function Home() {
+  const githubInfo = await getGithubService();
   return (
     <section className="flex flex-col justify-between">
       <h1 className="font-bold text-3xl text-left ">Reshad Sadik</h1>
@@ -27,7 +33,7 @@ export default function Home() {
             className="flex items-center gap-2"
           >
             {/* <TwitterIcon /> */}
-            {`500 tweets all time`}
+            {`${githubInfo.followers}`}
           </a>
           <a
             rel="noopener noreferrer"
@@ -35,11 +41,11 @@ export default function Home() {
             href="https://github.com/leerob"
             className="flex items-center gap-2"
           >
-            {/* <GitHubIcon /> */}
-            {`100 stars on this repo`}
+            <BsGithub className="mr-1 text-xl" />
+            {` ${githubInfo.public_repos} public repos`}
           </a>
           <Link href="/blog" className="flex items-center">
-            {/* <ViewsIcon /> */}
+            <BiStats className="mr-3 text-xl" />
             {`2600 blog views all time`}
           </Link>
         </div>
@@ -48,27 +54,20 @@ export default function Home() {
         I'm an full stack developer experienced on creating web apps using
         React, Next.js, Nodejs.
       </p>
-      <ul className="flex flex-col md:flex-row mt-8 space-x-0 md:space-x-4 space-y-2 md:space-y-0 font-sm text-neutral-500 dark:text-neutral-400">
-        <li>
-          <a
-            className="flex items-center hover:text-neutral-700 dark:hover:text-neutral-200 transition-all"
-            rel="noopener noreferrer"
-            target="_blank"
-            href="https://twitter.com/leeerob"
-          >
-            {/* <ArrowIcon /> */}
-            <p className="h-7">follow me on twitter</p>
-          </a>
+      <ul className="flex flex-col md:flex-row mt-8 space-x-0 md:space-x-8 space-y-2 md:space-y-0 font-sm text-neutral-500 dark:text-neutral-400">
+        <li className="flex items-center hover:text-neutral-700 dark:hover:text-neutral-200 transition-all cursor-pointer">
+          <BsArrowUpRight />
+          <ResumeDownloadButton />
         </li>
         <li>
           <a
-            className="flex items-center hover:text-neutral-700 dark:hover:text-neutral-200 transition-all"
+            className="flex items-center hover:text-neutral-700 dark:hover:text-green-600 transition-all"
             rel="noopener noreferrer"
             target="_blank"
-            href="https://leerob.substack.com"
+            href="https://www.linkedin.com/in/reshadsadik/"
           >
-            {/* <ArrowIcon /> */}
-            <p className="h-7">get email updates</p>
+            <BsArrowUpRight />
+            <p className="h-7 pl-2">find me on LinkedIn</p>
           </a>
         </li>
       </ul>
