@@ -4,15 +4,13 @@ import { BsArrowUpRight } from "react-icons/bs";
 import { BsGithub } from "react-icons/bs";
 import { BiStats } from "react-icons/bi";
 import ResumeDownloadButton from "../components/ResumeDownloadButton";
-import getGithubService from "../components/getGithubService";
 
 export default async function Home() {
-  const githubInfo = await getGithubService();
   return (
     <section className="flex flex-col justify-between">
       <h1 className="font-bold text-3xl text-left ">Reshad Sadik</h1>
       <p className="my-5 max-w-[460px] text-neutral-800 dark:text-neutral-200">
-        Hey, I'm Reshad. <b> Software Developer </b>
+        Hey, Im Reshad. <b> Software Developer </b>
         at SJ Innovation LLC. <br />
         Open source contributor | Networking enthusiast | AWS
       </p>
@@ -29,29 +27,29 @@ export default async function Home() {
           <a
             rel="noopener noreferrer"
             target="_blank"
-            href="https://twitter.com/leeerob"
+            href="https://twitter.com/reshad"
             className="flex items-center gap-2"
           >
             {/* <TwitterIcon /> */}
-            {`${githubInfo.followers}`}
+          200
           </a>
           <a
             rel="noopener noreferrer"
             target="_blank"
-            href="https://github.com/leerob"
+            href="https://github.com/ReshadSadik"
             className="flex items-center gap-2"
           >
             <BsGithub className="mr-1 text-xl" />
-            {` ${githubInfo.public_repos} public repos`}
+            {` 48 public repos`}
           </a>
-          <Link href="/blog" className="flex items-center">
+          <Link href="/blogs" className="flex items-center">
             <BiStats className="mr-3 text-xl" />
             {`2600 blog views all time`}
           </Link>
         </div>
       </div>
       <p className="my-5 max-w-[600px] text-neutral-800 dark:text-neutral-200">
-        I'm an full stack developer experienced on creating web apps using
+        Im an full stack developer experienced on creating web apps using
         React, Next.js, Nodejs.
       </p>
       <ul className="flex flex-col md:flex-row mt-8 space-x-0 md:space-x-8 space-y-2 md:space-y-0 font-sm text-neutral-500 dark:text-neutral-400">
@@ -64,13 +62,14 @@ export default async function Home() {
             className="flex items-center hover:text-neutral-700 dark:hover:text-green-600 transition-all"
             rel="noopener noreferrer"
             target="_blank"
-            href="https://www.linkedin.com/in/reshadsadik/"
+            href="https://bd.linkedin.com/in/reshadsadik"
           >
             <BsArrowUpRight />
             <p className="h-7 pl-2">find me on LinkedIn</p>
           </a>
         </li>
       </ul>
+      
     </section>
   );
 }

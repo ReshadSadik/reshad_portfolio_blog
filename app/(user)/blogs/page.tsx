@@ -3,6 +3,8 @@ import { groq } from "next-sanity";
 import { BiChevronRight } from "react-icons/bi";
 import styles from "./page.module.css";
 import Image from "next/image";
+import { urlForImage } from "@/sanity/lib/image";
+import ClientSideRoute from "@/app/components/ClientSideRoute";
 const query = groq`*[_type=="post"] {
     ...,
     author->,
@@ -15,15 +17,16 @@ const BlogPage = async () => {
       <h1 className="text-3xl font-bold text-center mb-4">Blogs</h1>
       <ul role="list" className="divide-y divide-gray-300">
         {blogs.map((blog: any) => (
+          <ClientSideRoute  key={blog._id} route={`/blog/${blog.slug.current}`}>
           <li
-            key={blog._id}
+           
             className={`flex justify-between gap-x-6 py-5  ${styles.blogContainer}`}
           >
             <div className="flex gap-x-4">
               <Image
-                alt="resh"
+                alt="blog"
                 className="h-24"
-                src="https://i.ibb.co/xzbd1YS/image-19.png"
+                src={urlForImage(blog.mainImage).url()}
                 width={160}
                 height={100}
                 priority
@@ -54,6 +57,7 @@ const BlogPage = async () => {
               </div>
             </div>
           </li>
+          </ClientSideRoute>
         ))}
       </ul>
     </div>
