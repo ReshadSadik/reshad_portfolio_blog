@@ -23,3 +23,49 @@ body {
 .project-icons {
   font-size: 24px;
 }
+.vertical-text {
+  writing-mode: vertical-lr;
+}
+
+.items-end {
+  align-items: end;
+}
+.items-start {
+  align-items: start;
+}
+.bullet-list li {
+  padding-left: 20px;
+  position: relative;
+  display: flex;
+  align-items: start;
+}
+.bullet-list > li:before {
+  content: "▹";
+  position: absolute;
+  left: 0;
+  color: #36B063;
+}
+.work-list li {
+  white-space: nowrap;
+  border-color: #233554;
+}
+.work-list::-webkit-scrollbar {
+  height: 4px;
+}
+.work-list li:hover, .cert-list li:hover {
+  color: black;
+  background: rgb(196, 195, 195);
+}
+.cert-list li > a {
+  display: flex;
+  align-items: center;
+}
+.active-item {
+  color: white;
+  background: #262626;
+  border-color: #36B063!important;
+}
+p > a {
+  color: #36B063;
+  font-weight: 600;
+}

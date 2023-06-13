@@ -1,10 +1,11 @@
 "use client";
 import propertyManager from "../../images/projects/propertyManager.png";
-import SpotifyProfile from "../../images/projects/SpotifyProfile.png";
-import Journal from "../../images/projects/journal.png";
+import fitlab from "../../images/projects/fitlab.png";
+import itSolution from "../../images/projects/itSolution.png";
 // import Project from "../components/Projects";
 import { useState } from "react";
 import FeaturedProject from "@/app/components/FeaturedProjects";
+import Project from "@/app/components/Project";
 
 export default function Page() {
   const [projects, setProjects] = useState([
@@ -23,27 +24,30 @@ export default function Page() {
       image: propertyManager,
     },
     {
-      name: "SysMon - System Monitoring",
+      name: "FitLab",
       description: [
         "A web application for managing your property",
         "A web application for managing your property",
         "user authentication and authorization features with JWT token, including secure user registration and login functionality with encrypted user information using bcrypt",
       ],
 
-      tags: ["Python-Flask", "React", "Tailwind", "Sockets"],
+      tags: ["React", "Redux", "TailwindCSS", "Express", "Firebase"],
       links: {
-        "fab fa-github": "https://github.com/ishwarjagdale/sys.mon",
-        "fas fa-external-link": "https://sys-mon.pages.dev/",
+        github: "https://github.com/ReshadSadik/fitlab_client",
+        live: "https://fiitlab.netlify.app/",
       },
-      image: SpotifyProfile,
+      image: fitlab,
     },
     {
-      name: "Journal - Medium Clone",
+      name: "IT Solutions",
       description: ["A web application for managing your property"],
 
-      tags: ["React", "Python", "Postgres", "Google Cloud"],
-      links: { "fab fa-github": "https://github.com/ishwarjagdale/journal" },
-      image: Journal,
+      tags: ["HTML", "CSS", "Javascript"],
+      links: {
+        github: "https://github.com/ReshadSadik/IT_SOLUTIONS",
+        live: "https://reshadsadik.github.io/IT_SOLUTIONS/",
+      },
+      image: itSolution,
     },
   ]);
 
@@ -77,32 +81,32 @@ export default function Page() {
             Other Noteworthy Projects
           </h3>
           <a
-            href={"https://github.com/ishwarjagdale"}
+            href={"https://github.com/ReshadSadik"}
             className={"accent text-sm font-monospace"}
           >
             view the archive
           </a>
         </div>
-        {/* <div className={"grid md:grid-cols-3 gap-4 w-full"}>
+        <div className={"grid md:grid-cols-3 gap-4 w-full"}>
                     <Project
-                        title={"SysMon's Backend Server"}
-                        description={"SysMon applications backend server made with Python. "}
-                        links={{"fab fa-github": "https://github.com/ishwarjagdale/sys.mon"}}
-                        tags={["Python-Flask", "Threading", "Postgres", "Sockets", "REST"]}
+                        title={"Amazon web Scraper"}
+                        description={"You can scrape any data depending on keywords or category"}
+                        links={"https://github.com/ReshadSadik/amazon-web-scraper"}
+                        tags={["Nodejs", "Puppeteer", "Cheerio", "request", "REST"]}
                     />
                     <Project
                         title={"Docket - Cloud based note application"}
                         description={"A simple & secure note taking application with ExpressJS backend connected with Postgres SQL."}
-                        links={{"fab fa-github": "https://github.com/ishwarjagdale/docket"}}
+                        links={{"fab fa-github": ""}}
                         tags={["React", "Express", "Postgres"]}
                     />
                     <Project
-                        title={"Apple Airpods Website Clone"}
-                        description={"An attempt to clone Apple's airpods animation by applying lottie animation on a custom a 3D phone model."}
-                        links={{"fab fa-github": "https://github.com/ishwarjagdale/lottie-animation", "fas fa-external-link": "https://ishwarjagdale.github.io/lottie-animation"}}
-                        tags={["Lottie Animation", "Javascript", "CSS"]}
+                        title={"GiftLawn"}
+                        description={"A gift suggestion website for your loved ones"}
+                        links={"https://www.giftlawn.com/"}
+                        tags={["Wordpress", "Javascript", "CSS"]}
                     />
-                </div> */}
+                </div>
       </div>
     </>
   );

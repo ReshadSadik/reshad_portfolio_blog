@@ -14,7 +14,8 @@ export default function FeaturedProject({
         "flex items-center w-full relative h-[400px] mb-[20px] border border-slate-700 md:border-0 drop-shadow md:drop-shadow-none  "
       }
     >
-      <div
+      <a
+      href={links.live}
         className={` transition ease-in-out  md:max-w-[59%] absolute ${
           orientation ? "left-0" : "right-0"
         } h-full md:h-auto md:w-full group hover:z-20 hover:md:scale-110`}
@@ -29,7 +30,8 @@ export default function FeaturedProject({
           className={`blur-sm brightness-50 h-full md:brightness-100 md:blur-0 object-cover md:object-contain drop-shadow-2xl`}
           alt={"Hal"}
         />
-      </div>
+      </a>
+      
       <div
         className={`flex flex-col p-8 md:p-0 z-10 ${
           orientation ? "ml-auto md:items-end" : "md:items-start"
@@ -42,14 +44,12 @@ export default function FeaturedProject({
         >
           Featured Project
         </span>
-        {/* <a href={Object.values(links)[0]}> */}
-        <a href="/">
           <h3
             className={"cursor-pointer slate hover-accent text-2xl font-[600]"}
           >
             {title}
           </h3>
-        </a>
+     
         <div
           className={`cursor-default md:bg-[#FCFCFC] rounded py-6 md:px-6 max-w-[500px] dark-slate  text-[15px]  text-justify my-4 drop-shadow-xl`}
         >
@@ -96,23 +96,6 @@ export default function FeaturedProject({
           ) : (
             ""
           )}
-          {/* {Object.keys(links).map((l, i) => {
-            // eslint-disable-next-line jsx-a11y/anchor-has-content
-            return (
-              <a
-                key={i}
-                target={"_blank"}
-                href={links[l]}
-                className={`hover-accent mr-6 ${l} ${
-                  i === (!orientation ? 0 : Object.keys(links).length - 1)
-                    ? "md:mr-0"
-                    : "md:mx-6"
-                }`}
-              >
-                <BsGithub />
-              </a>
-            );
-          })} */}
         </div>
       </div>
     </div>

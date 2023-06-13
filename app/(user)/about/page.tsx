@@ -1,116 +1,163 @@
+'use client'
+import { useState } from "react";
+
 const page = () => {
-  return (
-    <div className="bg-slate-800 text-white rounded-lg w-full md:w-[56rem]  space-y-6 p-10">
-      <div className="flex space-x-4 items-center ">
-        <div className="w-12 h-12">
-          <img
-            alt="avatar"
-            src="https://images.unsplash.com/photo-1518791841217-8f162f1e1131?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60"
-            className="rounded-full w-full h-full object-cover "
-          />
-          <div></div>
-        </div>
-        <div className="space-y-2">
-          <div className="flex space-x-2 items-center">
-            <h2 className="text-base"> John Doe</h2>
-            <svg
-              className="h-4 w-4 text-blue-500"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-              stroke-width="2"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
-              />
-            </svg>
-            <div className="  text-xs text-slate-400">posted an update</div>
-          </div>
-          <p className=" text-xs text-slate-400">10 Monthes Ago</p>
-        </div>
-      </div>
 
-      <div>
-        <p className="text-sm leading-6 text-slate-300">
-          Hypnosis at the parallel universe was the advice of alarm, commanded
-          to a conscious ship. Processors experiment with paralysis!
-        </p>
-      </div>
+  type WorkType = {
+    [key: string]: {
+      url: string;
+      position: string;
+      duration: string;
+      content: string[];
+    };
+  };
 
-      <div className="grid grid-cols-6 col-span-2   gap-2  ">
-        <div className=" overflow-hidden rounded-xl col-span-3 max-h-[14rem]">
-          <img
-            className="h-full w-full object-contain"
-            src="https://i.ibb.co/V916N9N/property.png"
-            alt=""
-          />
-        </div>
-        <div className=" overflow-hidden rounded-xl col-span-3 max-h-[14rem]">
-          <img
-            className="h-full w-full object-cover  "
-            src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1399&q=80"
-            alt=""
-          />
-        </div>
-        <div className=" overflow-hidden rounded-xl col-span-2 max-h-[10rem]">
-          <img
-            className="h-full w-full object-cover "
-            src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80"
-            alt=""
-          />
-        </div>
-        <div className=" overflow-hidden rounded-xl col-span-2 max-h-[10rem]">
-          <div className="group relative w-full">
-            <img
-              className="w-full object-cover"
-              src="https://www.kindacode.com/wp-content/uploads/2022/06/t-shirt-example.png"
-            />
-            <div className="absolute top-0 left-0 w-full h-0 flex flex-col justify-center items-center bg-indigo-700 opacity-0 group-hover:h-full group-hover:opacity-100 duration-500">
-              <h1 className="text-2xl text-white">Fiction T-Shirt Store</h1>
-              <a
-                className="mt-5 px-8 py-3 rounded-full bg-amber-400 hover:bg-amber-600 duration-300"
-                href="#"
-              >
-                Continue Shopping
-              </a>
+  const [work, setWork] = useState<WorkType>({
+    "SJ Innovation LLC. New York":  {
+        url: "#",
+        position: "Software Developer",
+        duration: "july 2022 - Present",
+        content: [
+            `Successfully managed and led a team of 7 developers throughout the project, ensuring smooth
+             coordination and timely delivery of the application before G-20.`,
+            `Developed the Smart Scan application using full-stack technologies such as ReactJS and Flask.
+            Collaborated with ASI, the Smart City, including government officials, to gather requirements
+            and incorporate their insights into the application's design and functionality.`,
+            `Handled the entire deployment and provided technical support and troubleshooting assistance
+            to the officials, addressing their queries and resolving any issues promptly.`,
+            `Received recognition for the successful completion of the application, contributing to the
+            enhancement of tourism experiences in Aurangabad and promoting historical knowledge among
+            visitors.`
+        ]
+    },
+    "ManaknightDigital Inc.": {
+        url: "https://oasisinfobyte.com/",
+        position: "Full Stack Web Developer",
+        duration: " 2021 - June 2022",
+        content: ["Built projects using concepts of OOPs",
+            "Completed projects like ATM Machine, Number Guessing Game and fulfilled all the requirements as stated"
+        ]
+    },
+    "Triceria Solutions": {
+        url: "https://rinex.ai/",
+        position: "Intern React Developer",
+        duration: "2019 - 2020",
+        content: ["Worked as the only web developer in a team of 12",
+            "Developed an event website for inter-state hackathon which we conducted",
+        ]
+    }
+})
+type CertificationType = {
+  [key: string]: {
+    url: string;
+    provider : string,
+    font: string;
+  };
+};
+const [certifications, setCertifications] = useState<CertificationType>({
+    "Automating Real-World Tasks with Python": {
+        url: "https://coursera.org/share/3d778b5a6dd8449da384fdd30f99a296",
+        provider: "Google & Coursera",
+        font: "google"
+    },
+    "From Data to Insights with Google Cloud": {
+        url: "https://www.coursera.org/account/accomplishments/specialization/LHTMWADX74T6",
+        provider: "Google & Coursera",
+        font: "google"
+    },
+    "Data Analysis with Python": {
+        url: "https://www.freecodecamp.org/certification/ishwarjagdale/data-analysis-with-python-v7",
+        provider: "FreeCodeCamp",
+        font: "free-code-camp"
+    },
+    "Scientific Computing with Python": {
+        url: "https://www.freecodecamp.org/certification/ishwarjagdale/scientific-computing-with-python-v7",
+        provider: "FreeCodeCamp",
+        font: "free-code-camp"
+    },
+    "JavaScript Algorithms and Data Structures": {
+        url: "https://www.freecodecamp.org/certification/ishwarjagdale/javascript-algorithms-and-data-structures",
+        provider: "FreeCodeCamp",
+        font: "free-code-camp"
+    },
+    "Responsive Web Design": {
+        url: "https://www.freecodecamp.org/certification/ishwarjagdale/responsive-web-design",
+        provider: "FreeCodeCamp",
+        font: "free-code-camp"
+    }
+})
+
+const [activeTab, setActiveTab] = useState(0);
+
+return (
+    <>
+        <div className={"flex flex-col text-left items-center max-w-[1000px] pb-32 w-full"}>
+            <div className={"flex items-center w-full header-line pb-16"}><span
+                className={"text-[22px] whitespace-nowrap slate font-Poppins font-[600]"}>Experience & Achievements</span>
+                 <hr className="w-full  border-green-600 ml-4 border-1" />
+
             </div>
-          </div>
+            <p className={"dark-slate w-full mb-2 leading-7"}>
+                As in 2023, I have about 6 years of experience in development. I'm a self-learned programmer,
+                Python, HTML & CSS being my initial stack I further learned C, Java, JavaScript, and SQL.
+            </p>
+            <p className={"dark-slate w-full mb-4 leading-7"}>I've worked with APIs, cloud services such as <a
+                href={"https://aws.amazon.com/"}>Amazon AWS</a>, <a href={"https://cloud.google.com/"}>Google
+                Cloud</a>,
+                and gained experience by building full stack web applications with variety of frameworks like <a
+                    href={"https://flask.palletsprojects.com/"} target={"_blank"}>Flask</a> and <a
+                    href={"https://www.djangoproject.com/"} target={"_blank"}>Django</a> in Python,
+                React and Express in Javascript.
+            </p>
+            <div className={"flex flex-col md:flex-row w-full mt-12"}>
+                <ul className={"flex md:flex-col text-sm slate-alt overflow-x-scroll font-monospace mr-6 work-list mb-8 md:mb-0"}>
+                    {
+                        Object.keys(work).map((k, i) => {
+                            return <li onClick={() => setActiveTab(i)}
+                                       className={`p-3 px-6 cursor-pointer border-b-2 md:border-b-0 
+                                       md:border-l-2 ${activeTab === i ? "active-item" : ""}`}>{k}</li>
+                        })
+                    }
+                </ul>
+                <div className={"p-2"}>
+                    {
+                        Object.keys(work).map((k, i:number) => {
+                            return <div className={`${activeTab === i ? "" : "hidden"}`}>
+                                <div className={`font-Poppins text-xl mb-1 font-[500]`}>
+                                    <span className={"slate mr-2"}>{work[k].position}</span><a href={work[k].url}
+                                                                                               className={"accent"}>@ {k}</a>
+                                </div>
+                                <span className={"slate text-sm font-monospace"}>{work[k].duration}</span>
+                                <ul className={"flex flex-col bullet-list mt-4 max-w-[540px] slate-alt leading-6 text-sm"}>
+                                    {
+                                        Object.values(work[k].content).map((v:any) => <li className={"mb-2 text-justify"}>{v}</li>)
+                                    }
+                                </ul>
+                            </div>
+                        })
+                    }
+                </div>
+            </div>
+            <div className={"flex items-center justify-center w-full pt-28 pb-8"}>
+                <h3 className={"text-2xl slate font-[600]"}>Certifications</h3>
+            </div>
+            <ul className={"flex w-full flex-col text-md slate font-monospace cert-list"}>
+                {
+                    Object.keys(certifications).map((k, i) => {
+                        return <li onClick={() => setActiveTab(i)} className={`p-3 px-6 cursor-pointer`}>
+                            <a href={certifications[k].url} target={"_blank"} rel="noreferrer">
+                                <i className={`mr-4 w-[20px] text-center accent fab fa-${certifications[k].font}`}/>
+                                <span>{k}</span>
+                                <span
+                                    className={"ml-2 hidden md:block text-sm slate-alt"}>- {certifications[k].provider}</span>
+                            </a>
+                        </li>
+                    })
+                }
+            </ul>
         </div>
-        <div className="relative overflow-hidden rounded-xl col-span-2 max-h-[10rem]">
-          <div className="text-white text-xl absolute inset-0  bg-slate-900/80 flex justify-center items-center">
-            + 23
-          </div>
-          <img
-            className="h-full w-full object-cover "
-            src="https://images.unsplash.com/photo-1560393464-5c69a73c5770?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=765&q=80"
-            alt=""
-          />
-        </div>
-      </div>
-
-      <div className="flex justify-between pt-5">
-        <svg
-          className="h-4 w-4 text-red-500"
-          fill="none"
-          viewBox="0 0 24 24"
-          stroke="currentColor"
-          stroke-width="2"
-        >
-          <path
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"
-          />
-        </svg>
-
-        <div className="text-slate-400 text-sm">
-          <p>23 Comments</p>
-        </div>
-      </div>
-    </div>
-  );
+    </>
+)
 };
 
 export default page;
