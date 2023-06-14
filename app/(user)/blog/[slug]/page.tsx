@@ -1,4 +1,5 @@
 import { RichTextComponent } from '@/app/components/RichTextComponent';
+import styles from "./page.module.css";
 import { client } from '@/sanity/lib/client';
 import { urlForImage } from '@/sanity/lib/image';
 import { PortableText } from '@portabletext/react';
@@ -39,12 +40,19 @@ export async function generateStaticParams() {
         <article>
             <section>
                 <div className='relative min-h-56 flex flex-col md:flex-row justify-between' >
-                    <div className='w-full h-full  p-10'>
-                        <Image src={urlForImage(blog?.mainImage).url()}
+                    <div className='w-full h-full  pb-6'>
+                        <div className={styles.blogHeader}>
+                            <p >MAR 9, 2021</p>
+                            <span >2 MIN READ</span>
+                            <span >LINUX</span>
+                        </div>
+                        <h1 className='text-center text-4xl font-bold pt-3 pb-5'>An intro to links in Linux</h1>
+                        <p className='text-center text-lg pb-7'>There will be motivation !</p>
+                        {/* <Image src={urlForImage(blog?.mainImage).url()}
                             alt={blog.author.name}
                            width={700}
                            height={200}
-                            />
+                            /> */}
                             <PortableText value={blog.body} components={RichTextComponent}/>
                       
                     </div>

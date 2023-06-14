@@ -15,6 +15,7 @@ export default function FeaturedProject({
       }
     >
       <a
+      target="_blank"
       href={links.live}
         className={` transition ease-in-out  md:max-w-[59%] absolute ${
           orientation ? "left-0" : "right-0"

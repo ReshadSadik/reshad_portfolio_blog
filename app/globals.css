@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 :root {
-  --foreground-rgb: 0, 0, 0;
+  --foreground-rgb: #1a1a1a;
   --background-start-rgb: 214, 219, 220;
   --background-end-rgb: 255, 255, 255;
 }
@@ -17,7 +17,7 @@
 }
 
 body {
-  color: rgb(var(--foreground-rgb));
+  color: var(--foreground-rgb);
   background: #fcfcfc;
 }
 .project-icons {
@@ -69,3 +69,6 @@ p > a {
   color: #36B063;
   font-weight: 600;
 }
+
+
+/* test-color : #F7AB0A; */

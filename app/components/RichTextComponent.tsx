@@ -7,9 +7,9 @@ export const RichTextComponent = {
     types: {
     image: ({value}:any) =>{
      return (
-            <div className='relative w-full h-96 m-10 mx-auto'>
+            <div className='relative w-full  m-10 mx-auto'>
                 <Image
-                className='object-contain'
+                className='object-contain mx-auto'
                 src={urlForImage(value).url()}
                 alt='blog image'
                 width={500}
@@ -29,11 +29,13 @@ export const RichTextComponent = {
   },
   block: {
     // Ex. 1: customizing common block types
-    h1: ({children}:any) => <h1 className="text-5xl py-10 font-bold">{children}</h1>,
-    h2: ({children}:any) => <h1 className="text-4xl py-10 font-bold">{children}</h1>,
-    h3: ({children}:any) => <h1 className="text-3xl py-10 font-bold">{children}</h1>,
-    h4: ({children}:any) => <h1 className="text-2xl py-10 font-bold">{children}</h1>,
-    blockquote: ({children}:any) => <blockquote className="border-l-[#F7AB0A] border-l-4 pl-5 py-5 my-5">{children}</blockquote>,
+    h1: ({children}:any) => <h1 className="text-4xl py-10 font-bold">{children}</h1>,
+    h2: ({children}:any) => <h1 className="text-2xl pt-10 pb-5 font-bold">{children}</h1>,
+    h3: ({children}:any) => <h1 className="text-xl pt-10 pb-6  font-bold">{children}</h1>,
+    h4: ({children}:any) => <h1 className="text-md pt-7 ">{children}</h1>,
+    blockquote: ({children}:any) => <blockquote className="border-l-[#36B063] border-l-4 pl-5 py-5 my-5">{children}</blockquote>,
+    helper: ({children}:any) => <p className="pt-7">{children}</p>,
+   
 
     // Ex. 2: rendering custom styles
     customHeading: ({children}:any) => (
