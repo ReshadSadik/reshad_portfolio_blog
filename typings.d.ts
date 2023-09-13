@@ -8,11 +8,16 @@ type Base = {
   _updatedAt: string;
 };
 
-interface Post extends Base {
+interface Blog extends Base {
   author: Author;
-  body: Block[];
-  categories: Category[];
-  slug: string;
+  body: any;
+  category: Category;
+  duration: string;
+  motivation: string;
+  slug: {
+    current: string;
+  };
+  mainImage: any;
   title: string;
   description: string;
 }

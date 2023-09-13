@@ -16,6 +16,16 @@ export default defineType({
       type: "string",
     }),
     defineField({
+      name: "duration",
+      title: "duration",
+      type: "string",
+    }),
+    defineField({
+      name: "motivation",
+      title: "motivation",
+      type: "string",
+    }),
+    defineField({
       name: "slug",
       title: "Slug",
       type: "slug",
@@ -46,10 +56,9 @@ export default defineType({
       ],
     }),
     defineField({
-      name: "categories",
-      title: "Categories",
-      type: "array",
-      of: [{ type: "reference", to: { type: "category" } }],
+      name: "category",
+      title: "category",
+      type: "string",
     }),
     defineField({
       name: "publishedAt",
