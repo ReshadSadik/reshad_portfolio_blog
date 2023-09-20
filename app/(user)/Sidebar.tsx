@@ -1,29 +1,29 @@
-"use client";
+'use client';
 
-import clsx from "clsx";
-import { usePathname } from "next/navigation";
-import Link from "next/link";
-import { LayoutGroup, motion } from "framer-motion";
+import clsx from 'clsx';
+import { usePathname } from 'next/navigation';
+import Link from 'next/link';
+import { LayoutGroup, motion } from 'framer-motion';
 
 const navItems = {
-  "/": {
-    name: "home",
+  '/': {
+    name: 'home',
   },
-  "/blogs": {
-    name: "blogs",
+  '/blogs': {
+    name: 'blogs',
   },
-  "/projects": {
-    name: "projects",
+  '/projects': {
+    name: 'projects',
   },
-  "/about": {
-    name: "about",
+  '/about': {
+    name: 'about',
   },
 };
 
 function Logo() {
   return (
-    <Link className="md:mx-0 mx-auto" aria-label="Lee Robinson" href="/">
-      <motion.svg
+    <Link className="md:mx-0 mx-auto" aria-label="reshad sadik" href="/">
+      {/* <motion.svg
         className="text-black dark:text-white h-[25px] md:h-[37px]"
         width="25"
         height="37"
@@ -42,7 +42,7 @@ function Logo() {
           }}
           transition={{
             duration: 0.5,
-            type: "spring",
+            type: 'spring',
             stiffness: 50,
           }}
           d="M39 316V0"
@@ -54,7 +54,7 @@ function Logo() {
           animate={{ x: 0, opacity: 1 }}
           transition={{
             duration: 0.5,
-            type: "spring",
+            type: 'spring',
             stiffness: 50,
           }}
           d="M232 314.998H129.852L232 232.887V314.998Z"
@@ -65,21 +65,29 @@ function Logo() {
           animate={{ x: 0, opacity: 1 }}
           transition={{
             duration: 0.5,
-            type: "spring",
+            type: 'spring',
             stiffness: 50,
           }}
           d="M42 314.998H129.852L42 232.887V314.998Z" // Update the path for "R"
           fill="currentColor"
         />
-      </motion.svg>
+      </motion.svg> */}
+      <motion.div
+        animate={{
+          scale: [1, 2, 2, 1, 1],
+          rotate: [0, 0, 270, 270, 0],
+          borderRadius: ['20%', '20%', '50%', '50%', '20%'],
+        }}
+      />
+      {/* <p className="text-3xl fw-bold">R</p> */}
     </Link>
   );
 }
 
 export default function Navbar() {
-  let pathname = usePathname() || "/";
-  if (pathname.includes("/blogs/")) {
-    pathname = "/blogs";
+  let pathname = usePathname() || '/';
+  if (pathname.includes('/blogs/')) {
+    pathname = '/blogs';
   }
 
   return (
@@ -101,10 +109,10 @@ export default function Navbar() {
                     key={path}
                     href={path}
                     className={clsx(
-                      "transition-all hover:text-neutral-800 dark:hover:text-neutral-200 flex align-middle",
+                      'transition-all hover:text-neutral-800 dark:hover:text-neutral-200 flex align-middle',
                       {
-                        "text-neutral-500": !isActive,
-                        "font-bold": isActive,
+                        'text-neutral-500': !isActive,
+                        'font-bold': isActive,
                       }
                     )}
                   >
@@ -115,7 +123,7 @@ export default function Navbar() {
                           className="absolute inset-0 bg-neutral-100 dark:bg-neutral-800 rounded-md z-[-1]"
                           layoutId="sidebar"
                           transition={{
-                            type: "spring",
+                            type: 'spring',
                             stiffness: 350,
                             damping: 30,
                           }}

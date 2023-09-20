@@ -1,11 +1,11 @@
-import { client } from "@/sanity/lib/client";
-import { groq } from "next-sanity";
-import { BiChevronRight } from "react-icons/bi";
-import styles from "./page.module.css";
-import Image from "next/image";
-import { urlForImage } from "@/sanity/lib/image";
-import ClientSideRoute from "@/app/components/ClientSideRoute";
-import { Blog } from "@/typings";
+import { client } from '@/sanity/lib/client';
+import { groq } from 'next-sanity';
+import { BiChevronRight } from 'react-icons/bi';
+import styles from './page.module.css';
+import Image from 'next/image';
+import { urlForImage } from '@/sanity/lib/image';
+import ClientSideRoute from '@/app/components/ClientSideRoute';
+import { Blog } from '@/typings';
 const query = groq`*[_type=="post"] {
     ...,
     author->,
@@ -26,6 +26,7 @@ const BlogPage = async () => {
                 <Image
                   alt="blog"
                   className="h-24"
+                  style={{ objectFit: 'none' }}
                   src={urlForImage(blog.mainImage).url()}
                   width={160}
                   height={100}

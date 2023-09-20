@@ -32,8 +32,9 @@ deliver high-quality web solutions.`,
       position: 'Full Stack Web Developer',
       duration: ' 2021 - June 2022',
       content: [
-        'Built projects using concepts of OOPs',
-        'Completed projects like ATM Machine, Number Guessing Game and fulfilled all the requirements as stated',
+        'Collaborated on building a products frontend with functionality which allowed users to buy, sell and trade on the XRDoge cryptocurrency',
+        ' Implemented tradingview charts to show live exchanges of currencies, XUMM wallet for trading',
+        'Imbedded twitter and facebook to show latest posts on the website',
       ],
     },
     'Triceria Solutions': {
@@ -41,8 +42,8 @@ deliver high-quality web solutions.`,
       position: 'Intern React Developer',
       duration: '2019 - 2020',
       content: [
-        'Worked as the only web developer in a team of 12',
-        'Developed an event website for inter-state hackathon which we conducted',
+        'Worked as the only React developer in a team of 12',
+        'Developed inventory management app with firebase and MERN stack',
       ],
     },
   });
@@ -54,33 +55,23 @@ deliver high-quality web solutions.`,
     };
   };
   const [certifications, setCertifications] = useState<CertificationType>({
-    'Automating Real-World Tasks with Python': {
-      url: 'https://coursera.org/share/3d778b5a6dd8449da384fdd30f99a296',
-      provider: 'Google & Coursera',
-      font: 'google',
-    },
-    'From Data to Insights with Google Cloud': {
-      url: 'https://www.coursera.org/account/accomplishments/specialization/LHTMWADX74T6',
-      provider: 'Google & Coursera',
-      font: 'google',
-    },
-    'Data Analysis with Python': {
-      url: 'https://www.freecodecamp.org/certification/ishwarjagdale/data-analysis-with-python-v7',
-      provider: 'FreeCodeCamp',
-      font: 'free-code-camp',
-    },
-    'Scientific Computing with Python': {
-      url: 'https://www.freecodecamp.org/certification/ishwarjagdale/scientific-computing-with-python-v7',
-      provider: 'FreeCodeCamp',
-      font: 'free-code-camp',
-    },
     'JavaScript Algorithms and Data Structures': {
-      url: 'https://www.freecodecamp.org/certification/ishwarjagdale/javascript-algorithms-and-data-structures',
+      url: '#',
       provider: 'FreeCodeCamp',
       font: 'free-code-camp',
+    },
+    'Complete Web Development Course With Programming Hero': {
+      url: 'https://web.programming-hero.com/congrats/complete/61bdfafcf5118b71ade5a8ee',
+      provider: 'https://web.programming-hero.com/',
+      font: 'programming hero',
+    },
+    'Mysql fundamentals': {
+      url: 'https://www.sololearn.com/Certificate/1060-10902196/jpg/',
+      provider: 'Sololearn.com',
+      font: 'sololearn',
     },
     'Responsive Web Design': {
-      url: 'https://www.freecodecamp.org/certification/ishwarjagdale/responsive-web-design',
+      url: '',
       provider: 'FreeCodeCamp',
       font: 'free-code-camp',
     },
@@ -131,6 +122,7 @@ deliver high-quality web solutions.`,
             {Object.keys(work).map((k, i) => {
               return (
                 <li
+                  key={k}
                   onClick={() => setActiveTab(i)}
                   className={`p-3 px-6 cursor-pointer border-b-2 md:border-b-0 
                                        md:border-l-2 ${
@@ -145,7 +137,7 @@ deliver high-quality web solutions.`,
           <div className={'p-2'}>
             {Object.keys(work).map((k, i: number) => {
               return (
-                <div className={`${activeTab === i ? '' : 'hidden'}`}>
+                <div key={k} className={`${activeTab === i ? '' : 'hidden'}`}>
                   <div className={`font-Poppins text-xl mb-1 font-[500]`}>
                     <span className={'slate mr-2'}>{work[k].position}</span>
                     <a href={work[k].url} className={'accent'}>
@@ -161,7 +153,9 @@ deliver high-quality web solutions.`,
                     }
                   >
                     {Object.values(work[k].content).map((v: any) => (
-                      <li className={'mb-2 text-justify'}>{v}</li>
+                      <li key={k} className={'mb-2 text-justify'}>
+                        {v}
+                      </li>
                     ))}
                   </ul>
                 </div>
@@ -180,6 +174,7 @@ deliver high-quality web solutions.`,
           {Object.keys(certifications).map((k, i) => {
             return (
               <li
+                key={k}
                 onClick={() => setActiveTab(i)}
                 className={`p-3 px-6 cursor-pointer`}
               >
