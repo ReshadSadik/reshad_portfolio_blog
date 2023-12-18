@@ -8,11 +8,13 @@ import ResumeDownloadButton from '../components/ResumeDownloadButton';
 export default async function Home() {
   return (
     <section className="flex flex-col justify-between">
-      <h1 className="font-bold text-3xl text-left ">Reshad Sadik</h1>
+      {/* <h1 className="font-bold text-3xl text-left ">Reshad Sadik</h1> */}
       <p className="my-5 max-w-[460px] text-neutral-800 dark:text-neutral-800">
-        Hey, Im Reshad. <b> Frontend Developer </b>
+        Hey, I&#8242;m Reshad. <b> Frontend Developer </b>
         at SJ Innovation LLC. <br />
-        Next | Open source contributor | Networking enthusiast | AWS
+        Next <span className="text-green-600">|</span> Open source contributor
+        <span className="text-green-600">|</span> Networking enthusiast{' '}
+        <span className="text-green-600">|</span> AWS
       </p>
       <div className="flex items-start md:items-center my-8 flex-col md:flex-row">
         <Image
@@ -49,8 +51,8 @@ export default async function Home() {
         </div>
       </div>
       <p className="my-5 max-w-[600px] text-neutral-800 dark:text-neutral-800">
-        Im an full stack developer experienced on creating web apps using React,
-        Next.js, Nodejs.
+        I&#8242;m an full stack developer experienced on creating web apps using
+        React, Next.js, Nodejs.
       </p>
       <ul className="flex flex-col md:flex-row mt-8 space-x-0 md:space-x-8 space-y-2 md:space-y-0 font-sm text-neutral-500 dark:text-neutral-400">
         <li className="flex items-center hover:text-neutral-700 dark:hover:text-green-600 transition-all cursor-pointer">

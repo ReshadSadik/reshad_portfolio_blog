@@ -4,7 +4,8 @@ import clsx from 'clsx';
 import { usePathname } from 'next/navigation';
 import Link from 'next/link';
 import { LayoutGroup, motion } from 'framer-motion';
-
+import logo from '../images/projects/reshad-animated-logo.gif';
+import Image from 'next/image';
 const navItems = {
   '/': {
     name: 'home',
@@ -23,63 +24,7 @@ const navItems = {
 function Logo() {
   return (
     <Link className="md:mx-0 mx-auto" aria-label="reshad sadik" href="/">
-      {/* <motion.svg
-        className="text-black dark:text-white h-[25px] md:h-[37px]"
-        width="25"
-        height="37"
-        viewBox="0 0 232 316"
-        fill="none"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <motion.path
-          initial={{
-            opacity: 0,
-            pathLength: 0,
-          }}
-          animate={{
-            opacity: 1,
-            pathLength: 1,
-          }}
-          transition={{
-            duration: 0.5,
-            type: 'spring',
-            stiffness: 50,
-          }}
-          d="M39 316V0"
-          stroke="currentColor"
-          strokeWidth={78}
-        />
-        <motion.path
-          initial={{ x: -200, opacity: 0 }}
-          animate={{ x: 0, opacity: 1 }}
-          transition={{
-            duration: 0.5,
-            type: 'spring',
-            stiffness: 50,
-          }}
-          d="M232 314.998H129.852L232 232.887V314.998Z"
-          fill="currentColor"
-        />
-        <motion.path
-          initial={{ x: -300, opacity: 0 }} // Update the initial position
-          animate={{ x: 0, opacity: 1 }}
-          transition={{
-            duration: 0.5,
-            type: 'spring',
-            stiffness: 50,
-          }}
-          d="M42 314.998H129.852L42 232.887V314.998Z" // Update the path for "R"
-          fill="currentColor"
-        />
-      </motion.svg> */}
-      <motion.div
-        animate={{
-          scale: [1, 2, 2, 1, 1],
-          rotate: [0, 0, 270, 270, 0],
-          borderRadius: ['20%', '20%', '50%', '50%', '20%'],
-        }}
-      />
-      {/* <p className="text-3xl fw-bold">R</p> */}
+      <Image width={150} src={logo} />
     </Link>
   );
 }
@@ -91,9 +36,9 @@ export default function Navbar() {
   }
 
   return (
-    <aside className="md:w-[150px] md:flex-shrink-0 -mx-4 md:mx-0 md:px-0">
+    <aside className="md:w-[150px] md:flex-shrink-0 -mx-4 md:mx-0 md:px-0 mt-1">
       <div className="lg:sticky lg:top-20">
-        <div className="ml-2 md:ml-[12px] mb-2 px-4 md:px-0 md:mb-8 space-y-10 flex flex-col md:flex-row items-start">
+        <div className=" mb-2 px-4 md:px-0 md:mb-2 space-y-10 flex flex-col md:flex-row items-start">
           <Logo />
         </div>
         <LayoutGroup>
@@ -109,7 +54,7 @@ export default function Navbar() {
                     key={path}
                     href={path}
                     className={clsx(
-                      'transition-all hover:text-neutral-800 dark:hover:text-neutral-300 flex align-middle',
+                      'transition-all hover:text-neutral-800 dark:hover:text-green-600 flex align-middle',
                       {
                         'text-neutral-500': !isActive,
                         'text-white': isActive,

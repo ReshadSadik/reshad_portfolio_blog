@@ -79,7 +79,7 @@ export default function RootLayout({
     <html lang="en" className={`${manrope.variable} font-sans`}>
       <body
         style={{ maxWidth: '66rem' }}
-        className={`h-[calc(100vh - 128px)]  antialiased flex flex-col md:flex-row mx-4 lg:mx-auto md:mt-32 mt-14`}
+        className={`h-[calc(100vh - 128px)] gap-10 antialiased flex flex-col md:flex-row mx-4 lg:mx-auto md:mt-32 mt-14`}
       >
         <Sidebar />
         <main className="flex-auto min-w-0 mt-6 md:mt-0 flex flex-col px-2 md:px-0">

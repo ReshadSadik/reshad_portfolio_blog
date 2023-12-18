@@ -56,7 +56,7 @@ export default function Page() {
       <div className={'flex flex-col items-center max-w-[1000px] pb-32 w-full'}>
         <div className={'flex items-center w-full header-line pb-1'}>
           <h3 className={'text-2xl whitespace-nowrap slate font-[600]'}>
-            Some Things Ive Built
+            Some Things I&#8242;ve Built
           </h3>{' '}
           <hr className="w-full  border-green-600 ml-4 border-1" />
         </div>
