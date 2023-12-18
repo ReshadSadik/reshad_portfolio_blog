@@ -1,7 +1,7 @@
 import Sidebar from './Sidebar';
 import '../globals.css';
 import localFont from 'next/font/local';
-
+import { Analytics } from '@vercel/analytics/react';
 const manrope = localFont({
   src: [
     {
@@ -84,7 +84,7 @@ export default function RootLayout({
         <Sidebar />
         <main className="flex-auto min-w-0 mt-6 md:mt-0 flex flex-col px-2 md:px-0">
           {children}
-          {/* <Analytics /> */}
+          <Analytics />
         </main>
       </body>
     </html>
