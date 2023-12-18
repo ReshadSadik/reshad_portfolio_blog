@@ -24,7 +24,7 @@ const navItems = {
 function Logo() {
   return (
     <Link className="md:mx-0 mx-auto" aria-label="reshad sadik" href="/">
-      <Image width={150} src={logo} />
+      <Image alt="logo" width={150} src={logo} />
     </Link>
   );
 }
