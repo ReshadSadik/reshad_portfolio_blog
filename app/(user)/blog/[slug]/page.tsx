@@ -1,13 +1,12 @@
-import { RichTextComponent } from "@/app/components/RichTextComponent";
-import styles from "./page.module.css";
-import { client } from "@/sanity/lib/client";
-import { urlForImage } from "@/sanity/lib/image";
-import { PortableText } from "@portabletext/react";
-import { groq } from "next-sanity";
-import Image from "next/image";
-import next from "next/types";
-import React from "react";
-import { Blog } from "@/typings";
+import { RichTextComponent } from '@/app/components/RichTextComponent';
+import styles from './page.module.css';
+import { client } from '@/sanity/lib/client';
+import { urlForImage } from '@/sanity/lib/image';
+import { PortableText } from '@portabletext/react';
+import { groq } from 'next-sanity';
+import Image from 'next/image';
+import React from 'react';
+import { Blog } from '@/typings';
 
 type Props = {
   params: {
@@ -60,7 +59,9 @@ async function Blog({ params: { slug } }: Props) {
             <PortableText value={blog.body} components={RichTextComponent} />
             <div className="mx-0 auto text-center mt-20 ">
               <h6 className="font-bold">Published by :</h6>
-              <img
+              <Image
+                width={60}
+                height={60}
                 className="w-10 rounded-full mx-auto my-4"
                 src={urlForImage(blog.author.image.asset).url()}
                 alt=""
