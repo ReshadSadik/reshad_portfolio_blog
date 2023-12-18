@@ -1,18 +1,18 @@
-import Image from "next/image";
-import Link from "next/link";
-import { BsArrowUpRight } from "react-icons/bs";
-import { BsGithub } from "react-icons/bs";
-import { BiStats } from "react-icons/bi";
-import ResumeDownloadButton from "../components/ResumeDownloadButton";
+import Image from 'next/image';
+import Link from 'next/link';
+import { BsArrowUpRight } from 'react-icons/bs';
+import { BsGithub } from 'react-icons/bs';
+import { BiStats } from 'react-icons/bi';
+import ResumeDownloadButton from '../components/ResumeDownloadButton';
 
 export default async function Home() {
   return (
     <section className="flex flex-col justify-between">
       <h1 className="font-bold text-3xl text-left ">Reshad Sadik</h1>
-      <p className="my-5 max-w-[460px] text-neutral-800 dark:text-neutral-200">
-        Hey, Im Reshad. <b> Software Developer </b>
+      <p className="my-5 max-w-[460px] text-neutral-800 dark:text-neutral-800">
+        Hey, Im Reshad. <b> Frontend Developer </b>
         at SJ Innovation LLC. <br />
-        Open source contributor | Networking enthusiast | AWS
+        Next | Open source contributor | Networking enthusiast | AWS
       </p>
       <div className="flex items-start md:items-center my-8 flex-col md:flex-row">
         <Image
@@ -31,7 +31,7 @@ export default async function Home() {
             className="flex items-center gap-2"
           >
             {/* <TwitterIcon /> */}
-          200
+            200
           </a>
           <a
             rel="noopener noreferrer"
@@ -48,12 +48,12 @@ export default async function Home() {
           </Link>
         </div>
       </div>
-      <p className="my-5 max-w-[600px] text-neutral-800 dark:text-neutral-200">
-        Im an full stack developer experienced on creating web apps using
-        React, Next.js, Nodejs.
+      <p className="my-5 max-w-[600px] text-neutral-800 dark:text-neutral-800">
+        Im an full stack developer experienced on creating web apps using React,
+        Next.js, Nodejs.
       </p>
       <ul className="flex flex-col md:flex-row mt-8 space-x-0 md:space-x-8 space-y-2 md:space-y-0 font-sm text-neutral-500 dark:text-neutral-400">
-        <li className="flex items-center hover:text-neutral-700 dark:hover:text-neutral-200 transition-all cursor-pointer">
+        <li className="flex items-center hover:text-neutral-700 dark:hover:text-green-600 transition-all cursor-pointer">
           <BsArrowUpRight />
           <ResumeDownloadButton />
         </li>
@@ -69,7 +69,6 @@ export default async function Home() {
           </a>
         </li>
       </ul>
-      
     </section>
   );
 }

@@ -109,9 +109,10 @@ export default function Navbar() {
                     key={path}
                     href={path}
                     className={clsx(
-                      'transition-all hover:text-neutral-800 dark:hover:text-neutral-200 flex align-middle',
+                      'transition-all hover:text-neutral-800 dark:hover:text-neutral-300 flex align-middle',
                       {
                         'text-neutral-500': !isActive,
+                        'text-white': isActive,
                         'font-bold': isActive,
                       }
                     )}

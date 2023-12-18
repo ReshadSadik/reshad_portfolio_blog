@@ -14,7 +14,7 @@ const page = () => {
   const [work, setWork] = useState<WorkType>({
     'SJ Innovation LLC. New York': {
       url: '#',
-      position: 'Software Developer',
+      position: 'Frontend Developer',
       duration: 'july 2022 - Present',
       content: [
         `Developed complex frontend in ReactJs, NextJs with typescript to create interactive, user friendly UI.
