@@ -1,7 +1,7 @@
 'use client';
 import { useState } from 'react';
 
-const page = () => {
+const Page = () => {
   type WorkType = {
     [key: string]: {
       url: string;
@@ -97,14 +97,14 @@ deliver high-quality web solutions.`,
           <hr className="w-full  border-green-600 ml-4 border-1" />
         </div>
         <p className={'dark-slate w-full mb-2 leading-7'}>
-          As in 2023, I have about 3 years of experience in development. I'm a
+          As in 2023, I have about 3 years of experience in development. Im a
           self-learner, React, Node being my initial stack I further learned
           SQL, mongoDB and little bit of shell scripting. Currently focusing on
           networking and AWS.
         </p>
         <p className={'dark-slate w-full mb-4 leading-7'}>
-          I've worked with APIs, cloud services and gained experience by
-          building full stack web applications with variety of frameworks like{' '}
+          Ive worked with APIs, cloud services and gained experience by building
+          full stack web applications with variety of frameworks like{' '}
           <a href={'https://nextjs.org/'} target={'_blank'}>
             Next{' '}
           </a>{' '}
@@ -200,4 +200,4 @@ deliver high-quality web solutions.`,
   );
 };
 
-export default page;
+export default Page;
