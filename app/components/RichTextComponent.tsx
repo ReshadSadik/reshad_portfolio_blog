@@ -1,7 +1,7 @@
-import { urlForImage } from "@/sanity/lib/image";
-import Image from "next/image";
-import Link from "next/link";
-import React from "react";
+import { urlForImage } from '@/sanity/lib/image';
+import Image from 'next/image';
+import Link from 'next/link';
+import React from 'react';
 
 export const RichTextComponent = {
   types: {
@@ -12,7 +12,7 @@ export const RichTextComponent = {
             className="object-contain mx-auto shadow shadow-1"
             src={urlForImage(value).url()}
             alt="blog image"
-            width={650}
+            width={700}
             height={200}
           />
         </div>
@@ -27,7 +27,14 @@ export const RichTextComponent = {
     number: ({ children }: any) => (
       <ol className="mt-lg list-decimal">{children}</ol>
     ),
-
+    code: ({ children }: any) => (
+      <ol
+        style={{ listStyle: 'inside' }}
+        className="list-decimal border-l-[#36B063] border-l-4 py-7 bg-[#111] rounded text-[#ccc] text-[18px] w-full my-10 px-4 pl-8"
+      >
+        {children}
+      </ol>
+    ),
     // Ex. 2: rendering custom lists
     checkmarks: ({ children }: any) => (
       <ol className="m-auto text-lg">{children}</ol>
@@ -44,12 +51,15 @@ export const RichTextComponent = {
     h3: ({ children }: any) => (
       <h1 className="text-xl pt-10 pb-6  font-bold">{children}</h1>
     ),
-    h4: ({ children }: any) => <h1 className="text-md pt-7 ">{children}</h1>,
+    h4: ({ children }: any) => (
+      <h1 className="text-md mt-10 mb-6  ">{children}</h1>
+    ),
     blockquote: ({ children }: any) => (
       <blockquote className="border-l-[#36B063] border-l-4 pl-5 py-5 my-5">
         {children}
       </blockquote>
     ),
+
     helper: ({ children }: any) => <span className="pt-7">{children}</span>,
 
     // Ex. 2: rendering custom styles
@@ -59,8 +69,8 @@ export const RichTextComponent = {
   },
   marks: {
     link: ({ children, value }: any) => {
-      const rel = !value.href.startsWith("/")
-        ? "noreferrer noopener"
+      const rel = !value.href.startsWith('/')
+        ? 'noreferrer noopener'
         : undefined;
       return (
         <Link

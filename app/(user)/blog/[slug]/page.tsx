@@ -38,7 +38,7 @@ async function Blog({ params: { slug } }: Props) {
   return (
     <article>
       <section>
-        <div className="relative min-h-56 flex flex-col md:flex-row justify-between">
+        <div className="relative min-h-56 flex max-w-[700px] flex-col md:flex-row justify-between">
           <div className="w-full h-full  pb-6">
             <div className={styles.blogHeader}>
               <p>{blog._createdAt.slice(0, 10)}</p>
