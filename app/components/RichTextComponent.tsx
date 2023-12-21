@@ -74,6 +74,7 @@ export const RichTextComponent = {
         : undefined;
       return (
         <Link
+          target="_blank"
           href={value.href}
           rel={rel}
           className=" decoration-[#F7ab0A] hover:underline hover:decoration-red text-green-600"
