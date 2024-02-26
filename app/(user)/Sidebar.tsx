@@ -112,7 +112,7 @@ export default function Navbar() {
                       'transition-all hover:text-neutral-800 dark:hover:text-neutral-300 flex align-middle',
                       {
                         'text-neutral-500': !isActive,
-                        'text-white': isActive,
+                        'text-black': isActive,
                         'font-bold': isActive,
                       }
                     )}
