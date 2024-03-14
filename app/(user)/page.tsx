@@ -9,13 +9,15 @@ export default async function Home() {
   return (
     <section className="flex flex-col justify-between">
       {/* <h1 className="font-bold text-3xl text-left ">Reshad Sadik</h1> */}
-      <p className="my-5 max-w-[460px] text-neutral-800 dark:text-neutral-800">
-        Hey, I&#8242;m Reshad. <b> Frontend Developer </b>
-        at SJ Innovation LLC. <br />
+      <div className="my-5 max-w-[460px] text-neutral-800 dark:text-neutral-800">
+      <p className='text-2xl font-bold mb-4'>  Hey, I&#8242;m Reshad.</p> 
+      <p className='m-0'> <b> Frontend Developer </b>
+        at SJ Innovation LLC.</p>
+       
         Next <span className="text-green-600">|</span> Open source contributor
         <span className="text-green-600">|</span> Networking enthusiast{' '}
         <span className="text-green-600">|</span> AWS
-      </p>
+      </div>
       <div className="flex items-start md:items-center my-8 flex-col md:flex-row">
         <Image
           alt="resh"
@@ -42,26 +44,26 @@ export default async function Home() {
             className="flex items-center gap-2"
           >
             <BsGithub className="mr-1 text-xl" />
-            {` 48 public repos`}
+            {/* {` 48 public repos`} */}
           </a>
-          <Link href="/blogs" className="flex items-center">
+          <Link href="/blogs" className="flex items-center ">
             <BiStats className="mr-3 text-xl" />
-            {`2600 blog views all time`}
+            {`260 blog views all time`}
           </Link>
         </div>
       </div>
       <p className="my-5 max-w-[600px] text-neutral-800 dark:text-neutral-800">
-        I&#8242;m an full stack developer experienced on creating web apps using
+        Web developer experienced on creating web apps using
         React, Next.js, Nodejs.
       </p>
       <ul className="flex flex-col md:flex-row mt-8 space-x-0 md:space-x-8 space-y-2 md:space-y-0 font-sm text-neutral-500 dark:text-neutral-400">
-        <li className="flex items-center hover:text-neutral-700 dark:hover:text-green-600 transition-all cursor-pointer">
+        <li className="flex items-center hover:text-neutral-700 dark:hover:text-green-600 transition-all cursor-pointer ">
           <BsArrowUpRight />
           <ResumeDownloadButton />
         </li>
         <li>
           <a
-            className="flex items-center hover:text-neutral-700 dark:hover:text-green-600 transition-all"
+            className="flex items-center hover:text-neutral-700 dark:hover:text-green-600 transition-all "
             rel="noopener noreferrer"
             target="_blank"
             href="https://bd.linkedin.com/in/reshadsadik"

@@ -33,8 +33,8 @@ export const metadata = {
   description: 'portfolio blog website',
   openGraph: {
     title: 'Reshad Sadik',
-    description: 'Developer, writer, and creator.',
-    url: 'https://reshadsadik.com',
+    description: 'Developer and writer.',
+    url: 'https://madebyreshad.com',
     siteName: 'Reshad Sadik',
     images: [
       {
@@ -64,10 +64,7 @@ export const metadata = {
   icons: {
     shortcut: '/favicon.ico',
   },
-  verification: {
-    google: 'eZSdmzAXlLkKhNJzfgwDqWORghxnJ8qR9_CHdAh5-xw',
-    yandex: '14d2e73487fa6c71',
-  },
+
 };
 
 export default function RootLayout({
