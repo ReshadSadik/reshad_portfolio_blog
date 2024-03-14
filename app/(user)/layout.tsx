@@ -38,7 +38,7 @@ export const metadata = {
     siteName: 'Reshad Sadik',
     images: [
       {
-        url: 'https://reshad.jpg',
+        url: '/final.png',
         width: 1920,
         height: 1080,
       },
