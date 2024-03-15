@@ -7,6 +7,7 @@ import { groq } from 'next-sanity';
 import Image from 'next/image';
 import React from 'react';
 import { Blog } from '@/typings';
+import { Metadata } from 'next';
 
 type Props = {
   params: {
@@ -14,31 +15,68 @@ type Props = {
   };
 };
 
-const query = groq`*[_type=='post']{
+export async function generateMetadata({
+  params: { slug },
+}: Props): Promise<Metadata | undefined> {
+  const query = groq`*[_type=='post']{
         slug
     }`;
-export async function metadata({ params: { slug } }: Props): Promise<any> {
-  const blog: Blog = await client.fetch(query, { slug });
+  let post = await client.fetch(query, { slug });
+  if (!post) {
+    return;
+  }
+
+  let { title, publishedAt: publishedTime, summary: description, image } = post;
+  // let ogImage = urlForImage(post?.mainImage).url() ;
 
   return {
-    title: blog.title,
-    description: blog.description,
+    title,
+    description,
     openGraph: {
-      title: blog.title,
-      description: blog.category,
+      title,
+      description,
       type: 'article',
-      publishedTime: blog._updatedAt,
-      url: `https://madebyreshad.com/blog/${blog.slug}`,
+      publishedTime,
+      url: `https://madebyreshad.com/blogs/${post.slug}`,
       images: [
         {
-          url: urlForImage(blog?.mainImage).url(),
+          url: urlForImage(
+            post?.mainImage || 'image-Tb9Ew8CXIwaY6R1kjMvI0uRR-2000x3000-jpg'
+          ).url(),
         },
       ],
     },
   };
 }
 
+// export async function metadata  ({ params: { slug } }: Props) {
+//   const query = groq`*[_type=='post']{
+//         slug
+//     }`;
+//   const blog: Blog = await client.fetch(query, { slug });
+
+//   return {
+//     title: blog.title,
+//     description: blog.description,
+//     openGraph: {
+//       title: blog.title,
+//       description: blog.category,
+//       type: 'article',
+//       publishedTime: blog._updatedAt,
+//       url: `https://madebyreshad.com/blog/${blog.slug}`,
+//       images: [
+//         {
+//           url: urlForImage(blog?.mainImage).url(),
+//         },
+//       ],
+//     },
+//   };
+// };
+
 export async function generateStaticParams() {
+  const query = groq`*[_type=='post']{
+        slug
+    }`;
   const slugs = await client.fetch(query, { next: { revalidate: 30 } });
   const slugRoutes = slugs.map((slug: any) => slug.slug.current);
 
