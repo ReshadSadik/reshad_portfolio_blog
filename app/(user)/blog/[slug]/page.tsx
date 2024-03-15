@@ -21,7 +21,7 @@ export const metadata = {
   openGraph: {
     title: 'Reshad Sadik',
     description: 'Developer, writer and automation',
-    url: 'https://madebyreshad.com',
+    url: 'https://madebyreshad.com/blog/an-intro-to-text-manipulation-in-linux',
     siteName: 'Reshad Sadik',
     images: [
       {
