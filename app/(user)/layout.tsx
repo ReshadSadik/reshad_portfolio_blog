@@ -29,16 +29,16 @@ const manrope = localFont({
 });
 
 export const metadata = {
-  title: 'reshad sadik mahi',
+  title: 'reshad sadik',
   description: 'portfolio blog website',
   openGraph: {
     title: 'Reshad Sadik',
-    description: 'Developer and writer.',
+    description: 'Developer, writer and automation',
     url: 'https://madebyreshad.com',
     siteName: 'Reshad Sadik',
     images: [
       {
-        url: '/final.png',
+        url: '/portfolio-home-page.png',
         width: 1920,
         height: 1080,
       },
@@ -64,7 +64,6 @@ export const metadata = {
   icons: {
     shortcut: '/favicon.ico',
   },
-
 };
 
 export default function RootLayout({

@@ -10,7 +10,10 @@ const query = groq`*[_type=="post"] {
     ...,
     author->,
   } | order(_createdAt desc)`;
-
+export const metadata = {
+  title: 'Blog',
+  description: 'Read my thoughts on software development, devops, and more.',
+};
 const BlogPage = async () => {
   const blogs = await client.fetch(query);
   return (

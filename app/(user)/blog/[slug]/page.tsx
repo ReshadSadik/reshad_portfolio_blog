@@ -14,11 +14,33 @@ type Props = {
   };
 };
 
-export async function generateStaticParams() {
-  const query = groq`*[_type=='post']{
+const query = groq`*[_type=='post']{
         slug
     }`;
+export async function generateMetadata({
+  params: { slug },
+}: Props): Promise<any> {
+  const blog: Blog = await client.fetch(query, { slug });
 
+  return {
+    title: blog.title,
+    description: blog.description,
+    openGraph: {
+      title: blog.title,
+      description: blog.category,
+      type: 'article',
+      publishedTime: blog._updatedAt,
+      url: `https://madebyreshad.com/blog/${blog.slug}`,
+      images: [
+        {
+          url: urlForImage(blog?.mainImage).url(),
+        },
+      ],
+    },
+  };
+}
+
+export async function generateStaticParams() {
   const slugs = await client.fetch(query, { next: { revalidate: 30 } });
   const slugRoutes = slugs.map((slug: any) => slug.slug.current);
 
@@ -51,11 +73,12 @@ async function Blog({ params: { slug } }: Props) {
             <p className="text-center text-gray-400 text-md pb-7">
               {blog.motivation}
             </p>
-            {/* <Image src={urlForImage(blog?.mainImage).url()}
-                            alt={blog.author.name}
-                           width={700}
-                           height={200}
-                            /> */}
+            <Image
+              src={urlForImage(blog?.mainImage).url()}
+              alt={blog.author.name}
+              width={700}
+              height={200}
+            />
             <PortableText value={blog.body} components={RichTextComponent} />
             <div className="mx-0 auto text-center mt-20 ">
               <h6 className="font-bold">Published by :</h6>
