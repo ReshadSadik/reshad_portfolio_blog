@@ -34,15 +34,17 @@ export async function generateMetadata({
     description: post.category,
     openGraph: {
       title: post.title,
-      description,
+      description: 'Developer, writer and automation',
       type: 'article',
       publishedTime,
-      url: `https://madebyreshad.com/blog/${post.slug}`,
+      url: 'https://madebyreshad.com/blog/an-intro-to-text-manipulation-in-linux',
       images: [
         {
           url: urlForImage(
             post?.mainImage || 'image-Tb9Ew8CXIwaY6R1kjMvI0uRR-2000x3000-jpg'
           ).url(),
+          width: 1920,
+          height: 1080,
         },
       ],
     },
