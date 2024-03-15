@@ -30,10 +30,10 @@ export async function generateMetadata({
 
   return {
     title: post.title,
-    description: 'first description',
+    description: post.description,
     openGraph: {
       title: post.title,
-      description: 'second description',
+      description: post.description,
       type: 'article',
       url: `https://madebyreshad.com/blog/${post.slug.current}`,
       images: [
@@ -45,29 +45,6 @@ export async function generateMetadata({
   };
 }
 
-// export async function metadata  ({ params: { slug } }: Props) {
-//   const query = groq`*[_type=='post']{
-//         slug
-//     }`;
-//   const blog: Blog = await client.fetch(query, { slug });
-
-//   return {
-//     title: blog.title,
-//     description: blog.description,
-//     openGraph: {
-//       title: blog.title,
-//       description: blog.category,
-//       type: 'article',
-//       publishedTime: blog._updatedAt,
-//       url: `https://madebyreshad.com/blog/${blog.slug}`,
-//       images: [
-//         {
-//           url: urlForImage(blog?.mainImage).url(),
-//         },
-//       ],
-//     },
-//   };
-// };
 async function Blog({ params: { slug } }: Props) {
   const query = groq`*[_type=="post" && slug.current==$slug][0] {
         ...,
@@ -92,12 +69,12 @@ async function Blog({ params: { slug } }: Props) {
             <p className="text-center text-gray-400 text-md pb-7">
               {blog.motivation}
             </p>
-            <Image
+            {/* <Image
               src={urlForImage(blog?.mainImage).url()}
               alt={blog.author.name}
               width={700}
               height={200}
-            />
+            /> */}
             <PortableText value={blog.body} components={RichTextComponent} />
             <div className="mx-0 auto text-center mt-20 ">
               <h6 className="font-bold">Published by :</h6>
