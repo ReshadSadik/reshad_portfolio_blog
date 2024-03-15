@@ -31,13 +31,13 @@ export async function generateMetadata({
 
   return {
     title,
-    description,
+    description: post.category,
     openGraph: {
-      title,
+      title: post.title,
       description,
       type: 'article',
       publishedTime,
-      url: `https://madebyreshad.com/blogs/${post.slug}`,
+      url: `https://madebyreshad.com/blog/${post.slug}`,
       images: [
         {
           url: urlForImage(
