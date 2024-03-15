@@ -17,9 +17,7 @@ type Props = {
 const query = groq`*[_type=='post']{
         slug
     }`;
-export async function generateMetadata({
-  params: { slug },
-}: Props): Promise<any> {
+export async function metadata({ params: { slug } }: Props): Promise<any> {
   const blog: Blog = await client.fetch(query, { slug });
 
   return {
