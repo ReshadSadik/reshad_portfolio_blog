@@ -11,24 +11,24 @@ export default function FeaturedProject({
   return (
     <div
       className={
-        'flex items-center w-full relative h-[400px] mb-[20px] border border-slate-700 md:border-0 drop-shadow md:drop-shadow-none  '
+        'flex items-center md:flex-nowrap flex-wrap w-full relative min-h-[400px] mb-[20px] border border-slate-700 md:border-0 drop-shadow md:drop-shadow-none  '
       }
     >
       <a
         target="_blank"
         href={links.live}
-        className={` transition ease-in-out  md:max-w-[59%] absolute ${
+        className={` transition ease-in-out  md:max-w-[59%] md:absolute relative ${
           orientation ? 'left-0' : 'right-0'
         } h-full md:h-auto md:w-full group hover:z-20 hover:md:scale-110`}
       >
         <div
           className={
-            'w-full h-full absolute top-0 bg-black opacity-20 brightness-50 group-hover:hidden z-10 '
+            'w-full h-full absolute top-0 bg-black md:opacity-20 opacity-0 brightness-50 group-hover:hidden z-10 '
           }
         />
         <img
           src={image}
-          className={`blur-sm brightness-50 h-full md:brightness-100 md:blur-0 object-cover md:object-contain drop-shadow-2xl`}
+          className={`blur-none brightness-100 h-full md:brightness-100 md:blur-0 object-cover md:object-contain drop-shadow-2xl`}
           alt={'Hal'}
         />
       </a>
@@ -50,7 +50,7 @@ export default function FeaturedProject({
         </h3>
 
         <div
-          className={`cursor-default md:bg-[#FCFCFC] rounded py-6 md:px-6 max-w-[500px] dark-slate  text-[15px]  text-justify my-4 drop-shadow-xl`}
+          className={`cursor-default md:bg-[#FCFCFC] rounded py-6 md:px-6 max-w-[500px] dark-slate  text-[15px]  text-justify my-4 `}
         >
           {description.map((desc: any, index: any) => (
             <ul className="pl-2" key={index}>
