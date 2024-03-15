@@ -35,8 +35,7 @@ export async function generateMetadata({
       title: post.title,
       description: 'second description',
       type: 'article',
-
-      url: `https://madebyreshad.com/blog/${post.slug}`,
+      url: `https://madebyreshad.com/blog/${post.slug.current}`,
       images: [
         {
           url: urlForImage(
