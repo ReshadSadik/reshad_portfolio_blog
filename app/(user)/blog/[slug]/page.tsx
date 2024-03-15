@@ -16,12 +16,12 @@ type Props = {
 };
 
 export async function generateMetadata({
-  params: { slug },
+  params,
 }: Props): Promise<Metadata | undefined> {
   const query = groq`*[_type=='post']{
         slug
     }`;
-  let post = await client.fetch(query, { slug });
+  let post = await client.fetch(query, { slug: params.slug });
   if (!post) {
     return;
   }
@@ -31,20 +31,18 @@ export async function generateMetadata({
 
   return {
     title,
-    description: post.category,
+    description,
     openGraph: {
-      title: post.title,
-      description: 'Developer, writer and automation',
+      title,
+      description,
       type: 'article',
       publishedTime,
-      url: 'https://madebyreshad.com/blog/an-intro-to-text-manipulation-in-linux',
+      url: `https://madebyreshad.com/blogs/${post.slug}`,
       images: [
         {
           url: urlForImage(
             post?.mainImage || 'image-Tb9Ew8CXIwaY6R1kjMvI0uRR-2000x3000-jpg'
           ).url(),
-          width: 1920,
-          height: 1080,
         },
       ],
     },
@@ -74,19 +72,6 @@ export async function generateMetadata({
 //     },
 //   };
 // };
-
-export async function generateStaticParams() {
-  const query = groq`*[_type=='post']{
-        slug
-    }`;
-  const slugs = await client.fetch(query, { next: { revalidate: 30 } });
-  const slugRoutes = slugs.map((slug: any) => slug.slug.current);
-
-  return slugRoutes.map((slug: any) => ({
-    slug: slug,
-  }));
-}
-
 async function Blog({ params: { slug } }: Props) {
   const query = groq`*[_type=="post" && slug.current==$slug][0] {
         ...,
