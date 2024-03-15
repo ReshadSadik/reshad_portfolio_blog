@@ -18,27 +18,24 @@ type Props = {
 export async function generateMetadata({
   params,
 }: Props): Promise<Metadata | undefined> {
-  console.log(params);
+  // console.log(params);
 
   const query = groq`*[_type=='post']{
         slug
     }`;
-  let post = await client.fetch(query, { slug: params.slug });
-  if (!post) {
-    return;
-  }
+  const post = await client.fetch(query, { slug: params.slug });
+  console.log(post);
 
-  let { title, publishedAt: publishedTime, summary: description, image } = post;
   // let ogImage = urlForImage(post?.mainImage).url() ;
 
   return {
-    title: post.title,
-    description,
+    title: 'first title',
+    description: 'first description',
     openGraph: {
       title: post.title,
-      description,
+      description: 'second description',
       type: 'article',
-      publishedTime,
+
       url: `https://madebyreshad.com/blog/${post.slug}`,
       images: [
         {
