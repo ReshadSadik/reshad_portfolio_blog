@@ -15,76 +15,59 @@ type Props = {
   };
 };
 
-export const metadata = {
-  title: 'reshad sadik',
-  description: 'portfolio blog website',
-  openGraph: {
-    title: 'Reshad Sadik',
-    description: 'Developer, writer and automation',
-    url: 'https://madebyreshad.com/blog/an-intro-to-text-manipulation-in-linux',
-    siteName: 'Reshad Sadik',
-    images: [
-      {
-        url: '/portfolio-home-page.png',
-        width: 1920,
-        height: 1080,
-      },
-    ],
-    locale: 'en-US',
-    type: 'website',
-  },
-  robots: {
-    index: true,
-    follow: true,
-    googleBot: {
-      index: true,
-      follow: true,
-      'max-video-preview': -1,
-      'max-image-preview': 'large',
-      'max-snippet': -1,
+export async function generateMetadata({
+  params,
+}: Props): Promise<Metadata | undefined> {
+  const query = groq`*[_type=="post" && slug.current==$slug][0] {
+        ...,
+        author->,
+        categories[]->
+      }`;
+  const post = await client.fetch(query, { slug: params.slug });
+  console.log(post.slug.current);
+
+  // let ogImage = urlForImage(post?.mainImage).url() ;
+
+  return {
+    title: post.title,
+    description: 'first description',
+    openGraph: {
+      title: post.title,
+      description: 'second description',
+      type: 'article',
+      url: `https://madebyreshad.com/blog/${post.slug.current}`,
+      images: [
+        {
+          url: urlForImage(post?.mainImage).url(),
+        },
+      ],
     },
-  },
-  twitter: {
-    title: 'Reshad Sadik',
-    card: 'summary_large_image',
-  },
-  icons: {
-    shortcut: '/favicon.ico',
-  },
-};
+  };
+}
 
-// export async function generateMetadata({
-//   params,
-// }: Props): Promise<Metadata | undefined> {
-//   // console.log(params);
-
+// export async function metadata  ({ params: { slug } }: Props) {
 //   const query = groq`*[_type=='post']{
 //         slug
 //     }`;
-//   const post = await client.fetch(query, { slug: params.slug });
-//   console.log(post);
-
-//   // let ogImage = urlForImage(post?.mainImage).url() ;
+//   const blog: Blog = await client.fetch(query, { slug });
 
 //   return {
-//     title: 'first title',
-//     description: 'first description',
+//     title: blog.title,
+//     description: blog.description,
 //     openGraph: {
-//       title: post.title,
-//       description: 'second description',
+//       title: blog.title,
+//       description: blog.category,
 //       type: 'article',
-//       url: 'https://madebyreshad.com/blog/an-intro-to-text-manipulation-in-linux',
+//       publishedTime: blog._updatedAt,
+//       url: `https://madebyreshad.com/blog/${blog.slug}`,
 //       images: [
 //         {
-//           url: urlForImage(
-//             post?.mainImage || 'image-Tb9Ew8CXIwaY6R1kjMvI0uRR-2000x3000-jpg'
-//           ).url(),
+//           url: urlForImage(blog?.mainImage).url(),
 //         },
 //       ],
 //     },
 //   };
-// }
-
+// };
 async function Blog({ params: { slug } }: Props) {
   const query = groq`*[_type=="post" && slug.current==$slug][0] {
         ...,
