@@ -35,7 +35,7 @@ export async function generateMetadata({
       title: post.title,
       description: 'second description',
       type: 'article',
-      url: `https://madebyreshad.com/blog/${post.slug.current}`,
+      url: 'https://madebyreshad.com/blog/an-intro-to-text-manipulation-in-linux',
       images: [
         {
           url: urlForImage(
