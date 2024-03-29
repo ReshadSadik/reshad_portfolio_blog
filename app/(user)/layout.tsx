@@ -1,5 +1,8 @@
 import Sidebar from './Sidebar';
 import '../globals.css';
+import '../notion.css';
+import '../prism.css';
+import 'react-notion/src/styles.css';
 import localFont from 'next/font/local';
 import { Analytics } from '@vercel/analytics/react';
 const manrope = localFont({

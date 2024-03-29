@@ -15,7 +15,23 @@
     --background-end-rgb: 0, 0, 0;
   }
 }
+.post-container {
+  @apply max-w-3xl mx-auto w-full px-4;
+}
 
+.achievement-notion .notion-text {
+  @apply text-gray-600 pl-0;
+}
+
+.achievement-notion .notion-link,
+.achievement-notion .notion-text {
+  @apply break-normal;
+}
+
+.notion-asset-wrapper img,
+.notion-asset-wrapper iframe {
+  @apply overflow-hidden rounded;
+}
 body {
   color: var(--foreground-rgb);
   background: #fcfcfc;
@@ -40,10 +56,10 @@ body {
   align-items: start;
 }
 .bullet-list > li:before {
-  content: "▹";
+  content: '▹';
   position: absolute;
   left: 0;
-  color: #36B063;
+  color: #36b063;
 }
 .work-list li {
   white-space: nowrap;
@@ -52,7 +68,8 @@ body {
 .work-list::-webkit-scrollbar {
   height: 4px;
 }
-.work-list li:hover, .cert-list li:hover {
+.work-list li:hover,
+.cert-list li:hover {
   color: black;
   background: rgb(196, 195, 195);
 }
@@ -63,12 +80,11 @@ body {
 .active-item {
   color: white;
   background: #262626;
-  border-color: #36B063!important;
+  border-color: #36b063 !important;
 }
 p > a {
-  color: #36B063;
+  color: #36b063;
   font-weight: 600;
 }
-
 
 /* test-color : #F7AB0A; */
