@@ -37,52 +37,12 @@ export async function generateStaticParams() {
   //   };
 }
 
-// export const getStaticProps: GetStaticProps<
-//   PostProps,
-//   { projectSlug: string }
-// > = async ({ params }) => {
-//   const slug = params?.projectSlug;
-
-//   if (!slug) {
-//     throw Error('No slug given');
-//   }
-
-//   const table = await getBlogTable<Project>(config.notionProjectTableId);
-//   const publishedProjects = table.filter((p) => p.published);
-
-//   const post = table.find((t) => t.slug === slug);
-//   const postIndex = publishedProjects.findIndex((t) => t.slug === slug);
-
-//   const morePosts = [...publishedProjects, ...publishedProjects].slice(
-//     postIndex + 1,
-//     postIndex + 3
-//   );
-
-//   if (!post || (!post.published && process.env.NODE_ENV !== 'development')) {
-//     throw Error(`Failed to find post for slug: ${slug}`);
-//   }
-
-//   const blocks = await getPageBlocks(post.id);
-//   const postViewCount = await getPageViews(`/${slug}`);
-
-//   return {
-//     props: {
-//       post,
-//       postViewCount,
-//       blocks,
-//       morePosts,
-//     },
-//     revalidate: 10,
-//   };
-// };
-
 export default async function BlogPost({
   params,
 }: {
   params: { projectSlug: string };
 }) {
   //   if (!post) return null;
-  console.log('this is test', params.projectSlug);
 
   if (!params.projectSlug) {
     throw Error('No slug given');
