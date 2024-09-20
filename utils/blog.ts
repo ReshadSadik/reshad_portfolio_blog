@@ -6,14 +6,16 @@ export const getBlogTable = async <T>(blogId: string): Promise<any> =>
     res.json()
   );
 
-export const getPageBlocks = async (pageId: string): Promise<BlockMapType> => {
+export const getPageBlocks = async (
+  pageId: string
+): Promise<BlockMapType | any> => {
   return await fetch(`https://notion-api.splitbee.io/v1/page/${pageId}`).then(
     (res) => res.json()
   );
 };
 
 export const getPageViews = async (path: string): Promise<number> => {
-  const res = await fetch(
+  const res: any = await fetch(
     `https://api.splitbee.io/public/timo.sh?path=${path}`
   ).then((res) => res.json());
   return res.count || 0;

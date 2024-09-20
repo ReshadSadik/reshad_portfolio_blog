@@ -48,8 +48,8 @@ export const Project: React.FC<
   }
 > = ({ title, preview, images, featured, slug, types, className }) => (
   <Link
-    href={`/[projectSlug]`}
-    as={`/${slug}`}
+    href={`blog/[blogSlug]`}
+    as={`blog/${slug}`}
     aria-label={`${title} - Project`}
     className={clsx(
       'focus group border bg-white rounded-md overflow-hidden flex flex-col',
@@ -98,9 +98,12 @@ export const Work: React.FC<{
     <h1 className="text-4xl font-bold">Work</h1>
     <div className="text-2xl text-gray-600">Things I Have Made in the Past</div>
     <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 my-4">
-      {projects.slice(0, preview ? 3 : undefined).map((p) => (
-        <Project key={p.id} featured {...p} />
-      ))}
+      {projects
+        .filter((project) => project.published)
+        .slice(0, preview ? 3 : undefined)
+        .map((p) => (
+          <Project key={p.id} featured {...p} />
+        ))}
     </div>
     {preview && (
       <div className="md:grid mt-4 grid-cols-2 sm:grid-cols-4 gap-4 ">

@@ -1,4 +1,4 @@
-import Sidebar from './Sidebar';
+import Sidebar from '../components/Sidebar';
 import '../globals.css';
 import '../notion.css';
 import '../prism.css';

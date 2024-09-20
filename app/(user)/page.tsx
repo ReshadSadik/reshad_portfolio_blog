@@ -10,23 +10,25 @@ export default async function Home() {
     <section className="flex flex-col justify-between">
       {/* <h1 className="font-bold text-3xl text-left ">Reshad Sadik</h1> */}
       <div className="my-5 max-w-[460px] text-neutral-800 dark:text-neutral-800">
-      <p className='text-2xl font-bold mb-4'>  Hey, I&#8242;m Reshad.</p> 
-      <p className='m-0'> <b> Frontend Developer </b>
-        at SJ Innovation LLC.</p>
-       
+        <p className="text-2xl font-bold mb-4"> Hey, I&#8242;m Reshad.</p>
+        <p className="m-0">
+          {' '}
+          <b> Frontend Developer </b>
+          at SJ Innovation LLC.
+        </p>
         Next <span className="text-green-600">|</span> Open source contributor
         <span className="text-green-600">|</span> Networking enthusiast{' '}
         <span className="text-green-600">|</span> AWS
       </div>
       <div className="flex items-start md:items-center my-8 flex-col md:flex-row">
-        <Image
+        {/* <Image
           alt="resh"
           className="rounded-full grayscale"
           src="https://i.ibb.co/NCYnsgd/fotor-2023-6-4-4-18-30.png"
           width={100}
           height={100}
           priority
-        />
+        /> */}
         <div className="mt-8 md:mt-0 ml-0 md:ml-6 space-y-2 text-neutral-500 dark:text-neutral-400">
           <a
             rel="noopener noreferrer"
@@ -53,8 +55,8 @@ export default async function Home() {
         </div>
       </div>
       <p className="my-5 max-w-[600px] text-neutral-800 dark:text-neutral-800">
-        Web developer experienced on creating web apps using
-        React, Next.js, Nodejs.
+        Web developer experienced on creating web apps using React, Next.js,
+        Nodejs.
       </p>
       <ul className="flex flex-col md:flex-row mt-8 space-x-0 md:space-x-8 space-y-2 md:space-y-0 font-sm text-neutral-500 dark:text-neutral-400">
         <li className="flex items-center hover:text-neutral-700 dark:hover:text-green-600 transition-all cursor-pointer ">

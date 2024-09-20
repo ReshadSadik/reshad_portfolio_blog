@@ -1,14 +1,11 @@
-'use client';
 import propertyManager from '../../images/projects/propertyManager.png';
 import fitlab from '../../images/projects/fitlab.png';
 import itSolution from '../../images/projects/itSolution.png';
-// import Project from "../components/Projects";
-import { useState } from 'react';
 import FeaturedProject from '@/app/components/FeaturedProjects';
 import Project from '@/app/components/Project';
 
 export default function Page() {
-  const [projects, setProjects] = useState([
+  const projects = [
     {
       name: 'Property Manager',
       description: [
@@ -49,11 +46,15 @@ export default function Page() {
       },
       image: itSolution,
     },
-  ]);
+  ];
 
   return (
     <>
-      <div className={'flex flex-col items-center max-w-[1000px] md:pb-32 pb-14 w-full'}>
+      <div
+        className={
+          'flex flex-col items-center max-w-[1000px] md:pb-32 pb-14 w-full'
+        }
+      >
         <div className={'flex items-center w-full header-line pb-1'}>
           <h3 className={'text-2xl whitespace-nowrap slate font-[600]'}>
             Some Things I&#8242;ve Built

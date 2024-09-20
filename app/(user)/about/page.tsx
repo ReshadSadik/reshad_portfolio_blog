@@ -153,7 +153,7 @@ deliver high-quality web solutions.`,
                     }
                   >
                     {Object.values(work[k].content).map((v: any) => (
-                      <li key={k} className={'mb-2 text-justify'}>
+                      <li key={v} className={'mb-2 text-justify'}>
                         {v}
                       </li>
                     ))}

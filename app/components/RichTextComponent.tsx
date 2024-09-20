@@ -1,4 +1,3 @@
-import { urlForImage } from '@/sanity/lib/image';
 import Image from 'next/image';
 import Link from 'next/link';
 import React from 'react';
@@ -6,17 +5,7 @@ import React from 'react';
 export const RichTextComponent = {
   types: {
     image: ({ value }: any) => {
-      return (
-        <div className="relative w-full  mt-10 mb-5 mx-auto ">
-          <Image
-            className="object-contain mx-auto shadow shadow-1"
-            src={urlForImage(value).url()}
-            alt="blog image"
-            width={700}
-            height={200}
-          />
-        </div>
-      );
+      return <div className="relative w-full  mt-10 mb-5 mx-auto "></div>;
     },
   },
   list: {
